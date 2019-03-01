@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  
+  display:grid;
+
+  grid-template: 'conteudo' 'footer';
+  grid-template-rows: 1fr auto;
+}
+.conteudo{
+  grid-area:conteudo;
+  padding-top:100px;
+}
+.footer{
+  grid-area:footer;
+  background-color:black;
+  color:white;
+}
+
+/* table */
+.table tr{
+  border-radius:50%;
+}
+.table tr:hover {
+  background-color: #FAEBE8;
+}
