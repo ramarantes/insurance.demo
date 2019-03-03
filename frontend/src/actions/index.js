@@ -1,25 +1,28 @@
 import API from '../API'
+import {reduxConstants as rc} from '../constants'
 
 export const fetchInsurance = () => async dispatch => {
         var result = await API.get();
         dispatch( {
-            type: 'FETCH_INSURANCES',
+            type: rc.FETCH_INSURANCES,
             payload:result.data
         });
     };
 
-export const insertInsurance = insurance => async dispatch => {
+export const insertInsurance = insurance => () => {
     var result;
+    debugger;
     if(!insurance.cod)
         result  = API.post('',insurance);
     else
         result = API.put('',insurance);
-    fetchInsurance();
+    if(result)
+        fetchInsurance();
 
 }
 export const selectInsurance = insurance =>
     ({
-        type: 'SELECT_INSURANCE',
+        type: rc.SELECT_INSURANCE,
         payload: insurance
     });
 

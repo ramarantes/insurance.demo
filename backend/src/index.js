@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
       cod: q.cod,
       insType: q.insType,
       objSegurado: q.objSegurado,
-      usuario: q.usuario,
+      userName: q.userName,
     }));
     res.send(qs);
   });

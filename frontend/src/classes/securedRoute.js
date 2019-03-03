@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import Login from './components/loggin'
-import {withAppContext} from './provider'
+import Login from '../components/loggin'
+import {withAppContext} from '../provider'
 
 function SecuredRoute(props) {
   const {component: Component, path} = props;

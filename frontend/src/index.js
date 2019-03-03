@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Routes from './routes';
+import Routes from './classes/routes';
 import * as serviceWorker from './serviceWorker';
 import reducer from './reducers'
 import {createStore} from 'redux'

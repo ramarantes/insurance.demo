@@ -1,11 +1,7 @@
 import React from 'react'
 import {withAppContext} from '../provider'
-import History from '../history'
+import History from '../classes/history'
 export default withAppContext(class extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     login = e => {
         e.preventDefault();
         var form = {username: e.target[0].value, password: e.target[1].value}

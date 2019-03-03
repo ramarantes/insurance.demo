@@ -3,12 +3,14 @@ import InsuranceForm from './InsuranceForm'
 import {insertInsurance} from '../actions'
 import { connect } from 'react-redux'
 import { reset } from 'redux-form'
-import History from '../history'
+import History from '../classes/history'
+import {withAppContext} from '../provider'
+
 
 class Insurance extends React.Component {
   submit = values => {
 
-    // print the form values to the console
+    values.userName = this.props.appContext.userName;
     this.props.insertInsurance(values);
     reset('insurance');
     History.push('/insuranceList');
@@ -20,4 +22,4 @@ class Insurance extends React.Component {
 const mapDispatchToProps = dispatch => ({
     insertInsurance: values => dispatch(insertInsurance(values))
   })
-export default connect(null,mapDispatchToProps)(Insurance)
+export default withAppContext(connect(null,mapDispatchToProps)(Insurance))

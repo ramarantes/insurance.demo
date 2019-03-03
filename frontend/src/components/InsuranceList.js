@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import History from '../history'
+import History from '../classes/history'
 import { selectInsurance, fetchInsurance } from '../actions'
 
 class InsuranceList extends React.Component {
@@ -26,7 +26,7 @@ class InsuranceList extends React.Component {
                         <td>{p.cod}</td>
                         <td>{p.insType}</td>
                         <td>{p.objSegurado}</td>
-                        <td>{p.username}</td>
+                        <td>{p.userName}</td>
                     </tr>
                 )
             });
@@ -45,8 +45,6 @@ class InsuranceList extends React.Component {
                     </tbody>
                 </table></div>
             );
-
-            return "";
         }
     }
 }

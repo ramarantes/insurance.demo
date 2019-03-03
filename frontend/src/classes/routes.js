@@ -1,17 +1,13 @@
-import { Router, Switch, Route, withRouter } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import React from 'react'
-import Login from './components/loggin'
+import Login from '../components/loggin'
 import SecuredRoute from './securedRoute'
 import history from './history'
-import NavBar from './components/NavBar'
-import Insurance from './components/Insurance'
-import InsuranceList from './components/InsuranceList'
+import NavBar from '../components/NavBar'
+import Insurance from '../components/Insurance'
+import InsuranceList from '../components/InsuranceList'
 
 export default class extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
 
     login = e => {
         e.preventDefault();

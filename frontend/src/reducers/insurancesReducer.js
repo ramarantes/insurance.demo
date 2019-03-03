@@ -1,40 +1,20 @@
-import _ from 'lodash'
+import {reduxConstants as rc} from '../constants'
+
 
 export default (insurances=[],action) => {
     
-    if(action.type == 'FETCH_INSURANCES')
+    if(action.type === rc.FETCH_INSURANCES)
     {
         return action.payload;
-    }
-    if(action.type == 'UPDATE_INSURANCE')
-    {
-        
-        return insurances.map((item) => {
-            if (item.cod !== action.payload.cod) {
-              // This isn't the item we care about - keep it as-is
-              return item
-            }
-        
-            // Otherwise, this is the one we want - return an updated value
-            return {
-              ...item,
-              ...action.payload
-            }
-          })
     }
     return insurances;
 } 
 
-export const selectInsuranceRedux = (insurance={},action) => {
+export const selectInsuranceRedux = (insurance,action) => {
     
-    if(action.type == 'SELECT_INSURANCE')
+    if(action.type === rc.SELECT_INSURANCE)
     {
         return action.payload;
-    }
-
-    if(action.type == 'UNSELECT_INSURANCE')
-    {
-        return {};
     }
     return {};
 } 
