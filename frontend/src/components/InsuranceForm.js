@@ -6,7 +6,7 @@ import ObjSegurado from './InsuranceFormObjSegurado'
 let InsuranceForm = props => {
   const { handleSubmit } = props
 
-  
+
 
   return <div className="col-6">
   <form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ let InsuranceForm = props => {
           </div>
           </div>
       </div>
-      <ObjSegurado tipo='vida'/>
+      <ObjSegurado tipo={props.typeSelected}/>
       <button type="submit"  className="btn btn-primary">Submit</button>
   
   </form>
@@ -68,7 +68,8 @@ InsuranceForm = reduxForm({
 
 InsuranceForm = connect(
   state => ({
-    initialValues: state.selectedInsurance
+    initialValues: state.selectedInsurance,
+    typeSelected : state.insuranceFormType
   })
 )(InsuranceForm)
 

@@ -24,7 +24,8 @@ const normalizeCPF = value => {
   }
 
 export default props => {
-    if(props.tipo == 'vida')
+    if(props.tipo == '') return <div></div>;
+    if(props.tipo == 'Vida')
         return(
         <div className="form-group">
             <label htmlFor="objSegurado">CPF</label>
@@ -32,7 +33,7 @@ export default props => {
         </div>)
     return(
     <div className="form-group">
-        <label htmlFor="objSegurado">objSegurado</label>
+        <label htmlFor="objSegurado">{props.tipo}</label>
         <Field name="objSegurado" component="input" type="text" className="form-control"/>
     </div>)
 }
